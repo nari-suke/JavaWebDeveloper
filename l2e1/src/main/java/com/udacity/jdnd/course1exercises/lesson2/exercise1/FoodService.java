@@ -3,6 +3,12 @@ package com.udacity.jdnd.course1exercises.lesson2.exercise1;
 /**
  * Food Service that performs business logic operations regarding food
  */
+
+import org.springframework.stereotype.Service;
+
+// ③@Serviceアノテーションを定義する。（@Componentでも可能だが、具体的な方がより良い）
+// クラス内でRepositoryが定義されている。同様にDIが可能か確認する。
+@Service
 public class FoodService {
     private FoodRepository foodRepository;
 

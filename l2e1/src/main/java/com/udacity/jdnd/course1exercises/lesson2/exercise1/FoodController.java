@@ -1,5 +1,6 @@
 package com.udacity.jdnd.course1exercises.lesson2.exercise1;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -7,6 +8,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 /**
  * Controller for receiving requests.
  */
+// ②@Controllerを付与することで、@ComponentScanで見つけられるようになる。
+// Controller内で、Serviceインスタンスが定義されているため、DIが可能かServiceクラスを確認する。
+@Controller
 @RequestMapping("/food")
 public class FoodController {
 

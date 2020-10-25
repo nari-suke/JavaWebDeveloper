@@ -1,5 +1,7 @@
 package com.udacity.jdnd.course1exercises.lesson2.exercise1;
 
+import org.springframework.stereotype.Repository;
+
 import java.util.ArrayList;
 import java.util.EnumMap;
 import java.util.List;
@@ -8,6 +10,10 @@ import java.util.Map;
 /**
  * Pretend repository implementation
  */
+// ④@Repositoryを定義する。(@Componentでも可能)
+// @Component : @Controller, @Service, @RepositryアノテーションのGeneralな形式
+// 残りのファイルはDataType（ ≠ Componenttype）のため、アノテーションは不要。
+@Repository
 public class FoodRepository {
     private Map<MealTime, List<FoodData>> foodDatabase = new EnumMap<>(MealTime.class);
 
