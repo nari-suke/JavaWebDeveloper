@@ -7,6 +7,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.time.Instant;
 
 @Controller
+public class SimpleHomeController {
+
+    @RequestMapping("/simplehome")
+    public String getHomePage(Model model) {
+        model.addAttribute("greetings", new String[]{ "Hi", "hello", "goodbye"});
+        return "home";
+    }
+
+
+@Controller
 public class HomeController {
 
     @RequestMapping("/home")
