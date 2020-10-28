@@ -6,23 +6,24 @@
 </head>
 <body>
 
-<form th:object="${chatform}" th:action="@{/chat}" method="POST">
+<form th:object="${chatForm}" action="#" th:action="@{/chat}" method="POST">
     <label for="username">Username:</label>
     <input id="username" type="text" th:field="*{username}">
     <label for="messageText">Message Text:</label>
     <input id="messageText" type="text" th:field="*{messageText}">
     <label for="messageType">Message Type: </label>
-    <select id="messageType th:field=*{messageType}">
+    <select id="messageType" th:field=*{messageType}">
         <option
                 th:each="type : ${allMessageTypes}"
                 th:value="${type}"
                 th:text="${type}"
         >
-            Say</option>
+            Say
+        </option>
     </select>
     <input type="submit">
 </form>
-<div th:each="chatMessage : ${chatMessage}">
+<div th:each="chatMessage : ${chatMessages}">
     <span th:text="${chatMessage.username}">Username</span>>: <span th:text="${chatMessage.message}">Hello, world!</span>
 </div>
 </body>
