@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Primary;
 @SpringBootApplication
 @Configuration
 @EnableAutoConfiguration
-public class    ReviewApplication {
+public class ReviewApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ReviewApplication.class, args);
