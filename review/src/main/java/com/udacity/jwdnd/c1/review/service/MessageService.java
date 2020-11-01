@@ -12,21 +12,24 @@ import java.util.List;
 public class MessageService {
     private List<ChatMessage> chatMessages;
 
-    //  no longer needed
-    //
-    //  private String MessageService(String message){
-    //      this.message = message;
-    //
-    //  public String uppercase() {
-    //      return this.message.toUpperCase();
-    //  }
-    //
-    //  public String lowercase() {
-    //      return this.message.toLowerCase();
-    //  }
+//    no longer needed
+//
+//    private String message;
+//
+//    public MessageService(String message) {
+//        this.message = message;
+//    }
+//
+//    public String uppercase() {
+//        return this.message.toUpperCase();
+//    }
+//
+//    public String lowercase() {
+//        return this.message.toLowerCase();
+//    }
 
     @PostConstruct
-    public void postConstruct(){
+    public void postConstruct() {
         System.out.println("Creating MessageService bean");
         this.chatMessages = new ArrayList<>();
     }
@@ -46,9 +49,9 @@ public class MessageService {
                 break;
         }
         this.chatMessages.add(newMessage);
-        }
+    }
 
-        public List<ChatMessage> getChatMessages() {
+    public List<ChatMessage> getChatMessages() {
         return chatMessages;
     }
 }
