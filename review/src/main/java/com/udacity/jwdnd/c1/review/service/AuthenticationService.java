@@ -27,10 +27,10 @@ public class AuthenticationService implements AuthenticationProvider {
 
         User user = userMapper.getUser(username);
         if(user != null) {
-            String encodedsalt = user.getSalt();
-            String hashedPassword = hashService.getHaashedValue(password, encodedsalt);
+            String encodedSalt = user.getSalt();
+            String hashedPassword = hashService.getHaashedValue(password, encodedSalt);
             if(user.getPassword().equals(hashedPassword)) {
-                return new UsernamePasswordAuthenticationToken((username, password, new ArrayList<>()));
+                return new UsernamePasswordAuthenticationToken(username, password, new ArrayList<>());
             }
         }
 

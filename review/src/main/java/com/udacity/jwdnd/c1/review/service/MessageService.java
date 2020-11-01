@@ -58,6 +58,6 @@ public class MessageService {
     }
 
     public List<ChatMessage> getChatMessages() {
-        return chatMessages;
+        return messageMapper.getAllMessages();
     }
 }

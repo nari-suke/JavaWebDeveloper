@@ -2,7 +2,6 @@ package com.udacity.jwdnd.c1.review.service;
 
 import com.udacity.jwdnd.c1.review.mapper.UserMapper;
 import com.udacity.jwdnd.c1.review.model.User;
-import org.springframework.security.config.annotation.ObjectPostProcessor;
 import org.springframework.stereotype.Service;
 
 import java.security.SecureRandom;
@@ -25,11 +24,11 @@ public class UserService {
 
     public int createUser(User user) {
         SecureRandom random = new SecureRandom();
-        byte[] salt = new SecureRandom();
+        byte[] salt = new byte[16];
         random.nextBytes(salt);
-        String encodedlist = Base64.getEncoder().encodeToString(salt);
-        String hashedPassword = hashService.getHaashedValue(user.getPassword(), encodedlist);
-        return userMapper.insert(new User(null, user.getUsername(), encodedlist, hashedPassword, user.getFirstName(), user.getLastName()));
+        String encodedSalt = Base64.getEncoder().encodeToString(salt);
+        String hashedPassword = hashService.getHaashedValue(user.getPassword(), encodedSalt);
+        return userMapper.insert(new User(null, user.getUsername(), encodedSalt, hashedPassword, user.getFirstName(), user.getLastName()));
     }
 
     public User getUser(String username) {
