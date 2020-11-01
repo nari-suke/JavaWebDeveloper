@@ -1,6 +1,5 @@
 package com.udacity.jwdnd.c1.review.model;
 
-
 public class User {
     private Integer userId;
     private String username;
@@ -18,7 +17,7 @@ public class User {
         this.lastName = lastName;
     }
 
-    public Integer getUserId(){
+    public Integer getUserId() {
         return userId;
     }
 
@@ -26,11 +25,11 @@ public class User {
         this.userId = userId;
     }
 
-    public String getUsername(){
+    public String getUsername() {
         return username;
     }
 
-    public void setUsername(String username){
+    public void setUsername(String username) {
         this.username = username;
     }
 
@@ -66,3 +65,5 @@ public class User {
         this.lastName = lastName;
     }
 }
+
+
