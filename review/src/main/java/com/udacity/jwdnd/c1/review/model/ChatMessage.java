@@ -1,7 +1,5 @@
 package com.udacity.jwdnd.c1.review.model;
 
-import org.apache.ibatis.javassist.tools.rmi.StubGenerator;
-
 public class ChatMessage {
     private String username;
     private String message;
