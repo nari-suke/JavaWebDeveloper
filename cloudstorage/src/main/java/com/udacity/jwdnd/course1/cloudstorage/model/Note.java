@@ -38,11 +38,11 @@ public class Note {
         this.noteDescription = noteDescription;
     }
 
-    public String getuserId() {
+    public Integer getuserId() {
         return userId;
     }
 
-    public void setuserId(String userId) {
+    public void setuserId(Integer userId) {
         this.userId = userId;
     }
 }
