@@ -17,13 +17,12 @@ public class Delivery {
     private String name;
     @Column(name = "address_full", length = 500)
     private String address;
-    private LocalDateTime deliveryTime; // includes both date and time - simpler than having two separate fields
+    private LocalDateTime deliveryTime;
     @Type(type = "yes_no")
     private Boolean completed;
 
-    //make sure to specify mappedBy. Lazy fetch optional,
-    //  but often a good idea for collection attributes
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "delivery")
+    // added CascadeType.REMOVE to automatically clear any associated plants when removed
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "delivery", cascade = CascadeType.REMOVE)
     private List<Plant> plants;
 
     /* getters and setters */

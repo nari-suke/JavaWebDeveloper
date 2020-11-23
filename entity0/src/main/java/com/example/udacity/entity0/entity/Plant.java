@@ -16,19 +16,17 @@ public class Plant {
     private Long id;
 
     @JsonView(Views.Public.class)
-    @Nationalized // should use @Nationalized instead of @Type=nstring
+    @Nationalized
     private String name;
 
     @JsonView(Views.Public.class)
     @Column(precision=12, scale=4)
-    private BigDecimal price; // BigDecimal is the standard Java class for currency math
+    private BigDecimal price;
 
-    @ManyToOne //many plants can belong to one delivery
-    @JoinColumn(name = "delivery_id")  //map the join column in the plant table
+    //don't retrieve delivery if we don't need it
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "delivery_id")
     private Delivery delivery;
 
-    public Plant() {
-    }
-
-    /* getters and setters*/
+    /* getters and setters */
 }
