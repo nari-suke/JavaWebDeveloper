@@ -1,4 +1,4 @@
-package com.example.udacity.entity0.controller;
+package com.udacity.jdnd.course3.controller;
 import org.springframework.web.bind.annotation.*;
 
 @RestController

@@ -1,10 +1,10 @@
-package com.example.udacity.entity0;
+package com.udacity.jdnd.course3;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class Entity0ApplicationTests {
+class Course3ApplicationTests {
 
 	@Test
 	void contextLoads() {

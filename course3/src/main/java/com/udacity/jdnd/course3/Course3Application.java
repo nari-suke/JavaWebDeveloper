@@ -1,13 +1,13 @@
-package com.example.udacity.entity0;
+package com.udacity.jdnd.course3;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Entity0Application {
+public class Course3Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Entity0Application.class, args);
+		SpringApplication.run(Course3Application.class, args);
 	}
 
 }
