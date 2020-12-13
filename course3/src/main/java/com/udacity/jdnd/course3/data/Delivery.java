@@ -3,11 +3,9 @@ package com.udacity.jdnd.course3.data;
 import org.hibernate.annotations.Nationalized;
 import org.hibernate.annotations.Type;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 public class Delivery {
@@ -22,6 +20,9 @@ public class Delivery {
     private LocalDateTime deliveryTime; // includes both date and time - simpler than having two separate fields
     @Type(type = "yes_no")
     private Boolean completed;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "delivery")
+    private List<Plant> plants;
 
     /* getters and setters */
 
