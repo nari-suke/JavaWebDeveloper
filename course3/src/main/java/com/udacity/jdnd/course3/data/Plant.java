@@ -1,6 +1,8 @@
 package com.udacity.jdnd.course3.data;
 
 
+import com.fasterxml.jackson.annotation.JsonView;
+import com.udacity.jdnd.course3.view.Views;
 import org.hibernate.annotations.Nationalized;
 
 import javax.persistence.*;
@@ -14,9 +16,12 @@ public class Plant {
     @GeneratedValue
     private Long id;
 
+    @JsonView(Views.Public.class)
     @Nationalized // should use @Nationalized instead of @Type=nstring
     private String name;
 //    private String color;
+
+    @JsonView(Views.Public.class)
     @Column(precision=12, scale=4)
     private BigDecimal price; // BigDecimal is the standard Java class for currency math
 
