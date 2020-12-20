@@ -24,6 +24,15 @@ public class Delivery {
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "delivery")
     private List<Plant> plants;
 
+    public Delivery(String name, String address, LocalDateTime deliveryTime){
+        this.name = name;
+        this.address = address;
+        this.deliveryTime = deliveryTime;
+    }
+    public Delivery(){
+
+    }
+
     /* getters and setters */
 
     public Long getId() {
@@ -64,5 +73,13 @@ public class Delivery {
 
     public void setCompleted(Boolean completed) {
         this.completed = completed;
+    }
+
+    public List<Plant> getPlants() {
+        return plants;
+    }
+
+    public void setPlants(List<Plant> plants) {
+        this.plants = plants;
     }
 }
