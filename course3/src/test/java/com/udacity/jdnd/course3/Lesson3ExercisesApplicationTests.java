@@ -2,7 +2,7 @@ package com.udacity.jdnd.course3;
 
 import com.udacity.jdnd.course3.data.Delivery;
 import com.udacity.jdnd.course3.data.Plant;
-import com.udacity.jdnd.course3.repository.PlantRepository;
+//import com.udacity.jdnd.course3.repository.PlantRepository;
 import org.assertj.core.api.Assertions;
 import org.assertj.core.util.Lists;
 import org.junit.Assert;
@@ -21,9 +21,9 @@ public class Lesson3ExercisesApplicationTests {
     @Autowired
     TestEntityManager testEntityManager;
 
-    @Autowired
-    PlantRepository plantRepository;
-
+//    @Autowired
+//    PlantRepository plantRepository;
+/*
     @Test
     public void testPricelessThan(){
         //test boundary conditions
@@ -46,4 +46,6 @@ public class Lesson3ExercisesApplicationTests {
         d.setCompleted(true);
         Assert.assertTrue(plantRepository.deliveryCompleted(p.getId()));
     }
+
+ */
 }
