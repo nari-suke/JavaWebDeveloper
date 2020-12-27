@@ -11,19 +11,14 @@ import java.util.List;
 @Repository
 public interface PlantRepository extends JpaRepository<Plant, Long> {
 
-    Boolean existsPlantByAndDeliveryCompleted(Long id, Boolean delivered);
+    Boolean existsPlantByIdAndDeliveryCompleted(Long id, Boolean delivered);
 
     @Query("select p.delivery.completed from Plant p where p.id = :plantId")
     Boolean deliveryCompleted(Long plantId);
 
     @Query("select new java.lang.Boolean(p.delivery.completed) from Plant p where p.id = :plantId")
-    Boolean delibery
+    Boolean deliveryCompletedBoolean(Long plantId);
 
+    List<Plant> findByPriceLessThan(BigDecimal price);
 
-
-    public List<Plant> findByPriceLessThan(BigDecimal valueOf) {
-    }
-
-    public boolean deliveryCompleted(Long id) {
-    }
 }
