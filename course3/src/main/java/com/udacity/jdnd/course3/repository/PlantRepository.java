@@ -16,6 +16,7 @@ public interface PlantRepository extends JpaRepository<Plant, Long> {
     @Query("select p.delivery.completed from Plant p where p.id = :plantId")
     Boolean deliveryCompleted(Long plantId);
 
+
     @Query("select new java.lang.Boolean(p.delivery.completed) from Plant p where p.id = :plantId")
     Boolean deliveryCompletedBoolean(Long plantId);
 
