@@ -22,8 +22,11 @@ public class DataSourceConfig {
         return dsb.build();
     }
 
-    private String securePasswordService() {
+/*    private String securePasswordService() {
         return "sa1234";
     }
+
+ */
+
 }
 

@@ -23,16 +23,17 @@ public class Delivery {
     @Type(type = "yes_no")
     private Boolean completed;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "delivery", cascade = CascadeType.REMOVE)
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "delivery", cascade = CascadeType.ALL)
     private List<Plant> plants;
 
-    /*
     public Delivery(String name, String address, LocalDateTime deliveryTime){
         this.name = name;
         this.address = address;
         this.deliveryTime = deliveryTime;
     }
-    */
+
+    public Delivery(){
+    }
 
     /* getters and setters */
 
