@@ -16,7 +16,7 @@ public class DataSourceConfig {
     @Bean
     @Primary
     @ConfigurationProperties("com.udacity.datasource")
-    public DataSource getDatasouece(){
+    public DataSource getDatasource(){
         DataSourceBuilder dsb = DataSourceBuilder.create();
         dsb.url("jdbc:mysql://localhost:3306/plant");
         return dsb.build();
