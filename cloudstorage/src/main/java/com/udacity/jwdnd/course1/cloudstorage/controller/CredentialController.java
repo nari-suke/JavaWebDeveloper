@@ -52,6 +52,7 @@ public class CredentialController {
         User user = userService.getUser(auth.getName());
         Integer userId = user.getUserId();
         Integer credentialId = credential.getCredentialId();
+        credential.setUserId(userId);
         ModelAndView mav = new ModelAndView();
 
         try{

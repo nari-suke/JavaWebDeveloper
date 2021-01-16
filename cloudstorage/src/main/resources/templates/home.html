@@ -145,9 +145,13 @@
                                 <tbody id="credential-table-body">
                                 <tr th:each="credential: ${credentials}" class="credential-elements">
                                     <td style="display: flex;">
-                                        <button id="editCredentialButton" type="button" class="btn btn-success"
-                                                th:onclick="showCredentialModal([[${credential.credentialId}]], [[${credential.url}]], [[${credential.username}]], [[${credential.password}]])">Edit</button>
-                                        <form class="delete-form" th:action="@{credential/delete}" th:object="${deleteCredential}" method="post">
+                                        <button type="button" class="btn btn-success" id="editCredentialBtn"
+                                                th:credentialId="${credential.getCredentialId()}"
+                                                th:url="${credential.getUrl()}"
+                                                th:username="${credential.getUsername()}"
+                                                th:decryption="${encryptionService.decryptValue(credential.getPassword(),credential.getKey())}"
+                                                th:onclick="javascript:showCredentialModal(this.getAttribute('credentialId'),this.getAttribute('url'),this.getAttribute('username'),this.getAttribute('decryption'));">Edit</button>
+                                        <form class="delete-form" th:action="@{delete}" th:object="${deleteCredential}" method="GET">
                                             <input type="hidden" name="credentialId" th:value="${credential.credentialId}" />
                                             <input id="deleteCredentialButton" type="submit" value="Delete" class="btn btn-danger" />
                                         </form>
