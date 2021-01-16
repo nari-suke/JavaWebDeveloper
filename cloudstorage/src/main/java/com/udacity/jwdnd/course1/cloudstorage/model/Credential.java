@@ -3,20 +3,22 @@ package com.udacity.jwdnd.course1.cloudstorage.model;
 public class Credential {
 
     private Integer userId;
+    private Integer credentialId;
     private String username;
-    private String url;
     private String password;
     private String key;
-    private Integer credentialId;
+    private String url;
 
-    public Credential(Integer userId, String username, String url, String password, String key, Integer credentialId) {
+    public Credential(Integer userId, Integer credentialId, String username, String password, String key, String url) {
         this.userId = userId;
+        this.credentialId = credentialId;
         this.username = username;
-        this.url = url;
         this.password = password;
         this.key = key;
-        this.credentialId = credentialId;
+        this.url = url;
     }
+
+    public Credential() { }
 
     public Integer getUserId() {
         return userId;
@@ -24,6 +26,14 @@ public class Credential {
 
     public void setUserId(Integer userId) {
         this.userId = userId;
+    }
+
+    public Integer getCredentialId() {
+        return credentialId;
+    }
+
+    public void setCredentialId(Integer credentialId) {
+        this.credentialId = credentialId;
     }
 
     public String getUsername() {
@@ -34,14 +44,6 @@ public class Credential {
         this.username = username;
     }
 
-    public String geturl() {
-        return url;
-    }
-
-    public void seturl(String url) {
-        this.url = url;
-    }
-
     public String getPassword() {
         return password;
     }
@@ -50,19 +52,19 @@ public class Credential {
         this.password = password;
     }
 
-    public String getkey() {
+    public String getKey() {
         return key;
     }
 
-    public void setkey(String key) {
+    public void setKey(String key) {
         this.key = key;
     }
 
-    public Integer getcredentialId() {
-        return credentialId;
+    public String getUrl() {
+        return url;
     }
 
-    public void setcredentialId(Integer credentialId) {
-        this.credentialId = credentialId;
+    public void setUrl(String url) {
+        this.url = url;
     }
 }

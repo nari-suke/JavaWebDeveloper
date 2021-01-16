@@ -1,48 +1,51 @@
 package com.udacity.jwdnd.course1.cloudstorage.model;
 
 public class Note {
+
     private Integer noteId;
-    private String noteTitle;
-    private String noteDescription;
+    private String notetitle;
+    private String notedescription;
     private Integer userId;
 
-    public Note(Integer noteId, String noteTitle, String noteDescription, Integer userId) {
-        this.noteId = noteId;
-        this.noteTitle = noteTitle;
-        this.noteDescription = noteDescription;
-        this.userId = userId;
-
+    public Note() {
     }
 
-    public Integer getnoteId() {
+    public Note(Integer noteId, String notetitle, String notedescription, Integer userId) {
+        this.noteId = noteId;
+        this.notetitle = notetitle;
+        this.notedescription = notedescription;
+        this.userId = userId;
+    }
+
+    public Integer getNoteId() {
         return noteId;
     }
 
-    public void setnoteId(Integer noteId) {
+    public void setNoteId(Integer noteId) {
         this.noteId = noteId;
     }
 
-    public String getnoteTitle() {
-        return noteTitle;
+    public String getNotetitle() {
+        return notetitle;
     }
 
-    public void setnoteTitle(String noteTitle) {
-        this.noteTitle = noteTitle;
+    public void setNotetitle(String notetitle) {
+        this.notetitle = notetitle;
     }
 
-    public String getnoteDescription() {
-        return noteDescription;
+    public String getNotedescription() {
+        return notedescription;
     }
 
-    public void setnoteDescription(String noteDescription) {
-        this.noteDescription = noteDescription;
+    public void setNotedescription(String notedescription) {
+        this.notedescription = notedescription;
     }
 
-    public Integer getuserId() {
+    public Integer getUserId() {
         return userId;
     }
 
-    public void setuserId(Integer userId) {
+    public void setUserId(Integer userId) {
         this.userId = userId;
     }
 }
