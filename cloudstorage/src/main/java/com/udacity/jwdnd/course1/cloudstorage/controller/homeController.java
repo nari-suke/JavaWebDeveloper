@@ -37,6 +37,7 @@ public class HomeController {
         mav.addObject("notes", this.noteService.getNotesByUserId(userId));
         mav.addObject("credentials", this.credentialService.getCredentialByUserId(userId));
         mav.addObject("credentialForm", new Credential());
+        mav.addObject("noteForm", new Credential());
         mav.addObject("deleteCredential", new Credential());
         mav.addObject("encryptionService", this.encryptionService);
         mav.setViewName("home");
