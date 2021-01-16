@@ -25,18 +25,19 @@ public class CredentialController {
 
     @PostMapping("/upload")
     public ModelAndView postCredential(Model model, Authentication auth, @ModelAttribute Credential credential){
-        User user = userService.getUser(auth.getName());
+        User user = this.userService.getUser(auth.getName());
         Integer userId = user.getUserId();
+        credential.setUserId(userId);
         ModelAndView mav = new ModelAndView();
 
         try{
-            if(credential.getCredentialId() != null){
+            if(credential.getCredentialId() == null){
                 credentialService.createCredential(credential);
             }else{
                 credentialService.editCredential(credential);
             }
             mav.addObject("success", true);
-            mav.addObject("message", "New note added.");
+            mav.addObject("message", "New credential added.");
         } catch(Exception e) {
             mav.addObject("error", true);
             mav.addObject("message", "System error." + e.getMessage());

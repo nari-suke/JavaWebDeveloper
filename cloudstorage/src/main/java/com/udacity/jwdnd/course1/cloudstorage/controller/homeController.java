@@ -1,8 +1,10 @@
 package com.udacity.jwdnd.course1.cloudstorage.controller;
 
 
+import com.udacity.jwdnd.course1.cloudstorage.model.Credential;
 import com.udacity.jwdnd.course1.cloudstorage.model.File;
 import com.udacity.jwdnd.course1.cloudstorage.model.User;
+import com.udacity.jwdnd.course1.cloudstorage.service.CredentialService;
 import com.udacity.jwdnd.course1.cloudstorage.service.FileService;
 import com.udacity.jwdnd.course1.cloudstorage.service.NoteService;
 import com.udacity.jwdnd.course1.cloudstorage.service.UserService;
@@ -24,11 +26,13 @@ public class HomeController {
     private final UserService userService;
     private final FileService fileService;
     private final NoteService noteService;
+    private final CredentialService credentialService;
 
-    public HomeController(UserService userService, FileService fileService, NoteService noteService) {
+    public HomeController(UserService userService, FileService fileService, NoteService noteService, CredentialService credentialService) {
         this.userService = userService;
         this.fileService = fileService;
         this.noteService = noteService;
+        this.credentialService = credentialService;
     }
 
     @GetMapping()
@@ -38,6 +42,9 @@ public class HomeController {
         ModelAndView mav = new ModelAndView();
         mav.addObject("files", this.fileService.getFilesByUserId(userId));
         mav.addObject("notes", this.noteService.getNotesByUserId(userId));
+        mav.addObject("credentials", this.credentialService.getCredentialByUserId(userId));
+        mav.addObject("credentialForm", new Credential());
+        mav.addObject("deleteCredential", new Credential());
         mav.setViewName("home");
         return mav;
     }
