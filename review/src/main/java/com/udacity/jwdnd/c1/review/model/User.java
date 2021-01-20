@@ -1,6 +1,6 @@
 package com.udacity.jwdnd.c1.review.model;
 
-public class User {
+public class   User {
     private Integer userId;
     private String username;
     private String salt;

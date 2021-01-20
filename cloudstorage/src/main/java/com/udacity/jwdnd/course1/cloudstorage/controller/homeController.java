@@ -44,16 +44,17 @@ public class HomeController {
         return mav;
     }
 
-
-    /*
-    @PostMapping()
-    public String addNote(){
+/*
+    @PostMapping("/logout")
+    public String logOut(){
+        return "/login?logout";
     }
 
-    @PostMapping()
-    public String addCredential(){
+    @GetMapping("/logout")
+    public String logOutView(){
+        return "redirect:/login?logout";
     }
 
-     */
+ */
 
 }
