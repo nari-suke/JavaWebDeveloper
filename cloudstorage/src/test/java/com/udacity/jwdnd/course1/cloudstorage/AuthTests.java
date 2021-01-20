@@ -57,7 +57,7 @@ class AuthTests {
 		// initialize object of SignupPage
 		// call .signup() to simulate user's signup:
 		signupPage = new SignupPage(driver);
-		signupPage.signup("Phuong", "Tran", "ploratran", "p@ssword");
+		signupPage.signup("Foo", "Bar", "FooBar", "p@ssword");
 
 		// check if the current page title is Signup:
 		assertEquals("Sign Up", driver.getTitle());
@@ -68,7 +68,7 @@ class AuthTests {
 		// initialize object of LoginPage
 		loginPage = new LoginPage(driver);
 		// call .login() to simulate user's login:
-		loginPage.login("ploratran", "p@ssword");
+		loginPage.login("FooBar", "p@ssword");
 
 		// check if this page title is Home after successfully loggin in:
 		assertEquals("Home", driver.getTitle());

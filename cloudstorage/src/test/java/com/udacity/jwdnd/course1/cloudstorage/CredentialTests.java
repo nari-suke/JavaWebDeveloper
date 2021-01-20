@@ -101,7 +101,7 @@ public class CredentialTests {
         credentialPage.clickAddCredBtn();
 
         // simulate user to add new data to create add credential:
-        credentialPage.fillCredentialData("facebook.com", "ploratran", "p@ssword");
+        credentialPage.fillCredentialData("foobar.com", "FooBar", "p@ssword");
 
         // after successfully added new credential, navigate to Result page
         // initialize new Result page object:
@@ -121,8 +121,8 @@ public class CredentialTests {
         Credential credential = this.credentialService.getCredentialByCredentialId(1);
 
         // test if new credential url, username, and password match:
-        assertEquals("facebook.com", credentialPage.getUrlText());
-        assertEquals("ploratran", credentialPage.getUsernameText());
+        assertEquals("foobar.com", credentialPage.getUrlText());
+        assertEquals("FooBar", credentialPage.getUsernameText());
         assertEquals(this.encryptionService.encryptValue("p@ssword", credential.getKey()), credentialPage.getPasswordText());
     }
 

@@ -83,7 +83,7 @@ public class NotePage {
         ((JavascriptExecutor) driver).executeScript("arguments[0].value='" + description + "';", this.noteDescription);
 
         // click on "Save Changes" to submit:
-        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", this.submitBtn);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", submitBtn);
     }
 
     // verify that new note title is created:
