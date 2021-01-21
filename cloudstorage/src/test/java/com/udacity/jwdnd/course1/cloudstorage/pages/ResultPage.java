@@ -8,19 +8,16 @@ import org.openqa.selenium.support.PageFactory;
 
 public class ResultPage {
 
-    // fields:
     @FindBy(tagName = "a")
     private WebElement backHomeLink;
 
     private final WebDriver driver;
 
-    // constructor:
     public ResultPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
 
-    // methods:
     public void clickHereBtn() {
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", this.backHomeLink);
     }
