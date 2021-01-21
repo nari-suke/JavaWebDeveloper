@@ -6,10 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-// Page Object of login.html:
 public class LoginPage {
 
-    // define fields:
     @FindBy(id = "inputUsername")
     private WebElement username;
 
@@ -27,20 +25,16 @@ public class LoginPage {
 
     private final WebDriver driver;
 
-    // constructor:
     public LoginPage(WebDriver driver)
     {   this.driver = driver;
         PageFactory.initElements(driver, this);
     }
 
-    // methods:
     public void login(String username, String password) {
 
-        // fill in data:
         ((JavascriptExecutor) driver).executeScript("arguments[0].value='" + username + "';", this.username);
         ((JavascriptExecutor) driver).executeScript("arguments[0].value='" + password + "';", this.password);
 
-        // hit Login button:
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", this.submitBtn);
     }
 
